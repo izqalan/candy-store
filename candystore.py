@@ -40,13 +40,13 @@ while 1:
     
 time.sleep(1)
 weight = 0.0
-weight = input('Amount (kg)')
+weight = input('Amount (kg)\n')
 while weight < 5:
     weight = input('In must be 5kg or more\n ')
 while 1:                            #use 1 for endless loop
     yn = raw_input("Are you sure this is the right amount? (Y/N)\n")
     if yn ==  "N" or yn == "n":
-        weight = input('Amount (kg)')
+        weight = input('Amount (kg)\n')
         while weight < 5:
             weight = input('In must be 5kg or more\n ')
     elif yn == "Y" or yn == "y":
@@ -54,9 +54,9 @@ while 1:                            #use 1 for endless loop
     
 #+++++++++++++PACK.MANDATORY+++++++++++++
 time.sleep(0.5)
-print "Jar(100g) or Bag(50g)"
+print "Jar(100g) or Bag(50g)\n"
 while 1:
-    pack = raw_input("which type of packaging do you prefer [NO CAPS]")
+    pack = raw_input("which type of packaging do you prefer [NO CAPS]\n")
     if pack == "jar" or pack == "Jar":
         pricepack = (weight/0.1) * 1.5
         break
@@ -67,10 +67,10 @@ while 1:
         print 'invalid'
 time.sleep(0.5)      
 while 1:
-    yn = raw_input('do you want custom made label ? y/n [NO CAPS]')
+    yn = raw_input('do you want custom made label ? y/n [NO CAPS] ')
     if yn == 'y' or yn == 'Y':
-        nlabel = input('how many ?')
-        label = raw_input("what is it ? ")
+        nlabel = input('how many ?\n')
+        label = raw_input("what is it ?\n")
         pricepack = pricepack + (0.2 * nlabel)
         break
     elif yn == 'n' or yn == 'N':
@@ -82,7 +82,7 @@ while 1:
 
 #-----MANDATORY-END------------------------------------------------------
 while 1:
-    func = raw_input("choose function")
+    func = raw_input("choose function ")
     
     if func == '0':
         if name == '' and address == '' and cell == '':
@@ -123,13 +123,13 @@ while 1:
     elif func == '3':               #pricepack
         time.sleep(1)
         weight = 0.0
-        weight = input('Amount (kg)')
+        weight = input('Amount (kg)\n')
         while weight < 5:
             weight = input('In must be 5kg or more\n ')
         while 1:                            #use 1 for endless loop
             yn = raw_input("Are you sure this is the right amount? (Y/N)\n")
             if yn ==  "N" or yn == "n":
-                weight = input('Amount (kg)')
+                weight = input('Amount (kg)\n')
                 while weight < 5:
                     weight = input('In must be 5kg or more\n ')
             elif yn == "Y" or yn == "y":
@@ -137,9 +137,9 @@ while 1:
             
 #-----------PACKAGING------------------PACKAGING-------------------PACKAGING--        
 
-        print "Jar(100g) or Bag(50g)"
+        print "Jar(100g) or Bag(50g)\n"
         while 1:
-            pack = raw_input("which type of packaging do you prefer [NO CAPS]")
+            pack = raw_input("which type of packaging do you prefer [NO CAPS]\n")
             if pack == "jar" or pack == "Jar":
                 pricepack = (weight/0.1) * 1.5
                 break
@@ -150,10 +150,10 @@ while 1:
                 print 'invalid'
             
         while 1:
-            yn = raw_input('do you want custom made label ? y/n [NO CAPS]')
+            yn = raw_input('do you want custom made label ? y/n [NO CAPS] ')
             if yn == 'y' or yn == 'Y':
-                nlabel = input('how many ?')
-                label = raw_input("what is it ? ")
+                nlabel = input('how many ?\n')
+                label = raw_input("what is it ?\n")
                 pricepack = pricepack + (0.2 * nlabel)
                 print "type sos for help"
                 break
@@ -168,7 +168,7 @@ while 1:
                    
 #----------------------------------CALCULATION----------------------------
 time.sleep(0.5)
-print "processing"
+print "processing..."
 time.sleep(1)
 
 if weight == 5:
