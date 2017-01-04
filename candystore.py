@@ -1,13 +1,57 @@
 import sys, time
-sos = "1 : Billing Info \n2 : candy Flavor \n3 : Amount & Packaging \n0 : for summary \ntype help for help"
+
 print "welcome to our program"
 
-
+def sos():
+    print "1 : Billing Info \n2 : candy Flavor \n3 : Amount & Packaging \n0 : for summary"
+    
 def terminate():
     print "system will termminate in 3s"
     time.sleep(3)
     sys.exit(0)
 
+
+def summary():
+    print '____________________________________________________________________________'
+    print
+    print """
+            _____.___.                     .__  __                  
+            \__  |   | ____  __ _________  |__|/  |_  ____   _____  
+             /   |   |/  _ \|  |  \_  __ \ |  \   __\/ __ \ /     \ 
+             \____   (  <_> )  |  /|  | \/ |  ||  | \  ___/|  Y Y  |
+             / ______|\____/|____/ |__|    |__||__|  \___  >__|_|  /
+             .
+
+
+            """
+   
+          
+
+    print "\t\t\t\t Menu"
+    print "\t\t\t\t Name: ",name #name
+    print "\t\t\t\t CELL-NUMBER :", cell #cell
+    print "\t\t\t\t ADDRESS :", address #address
+    print "\t\t\t\t CANDY FLAVOR :", flav #flav
+    print "\t\t\t\t WEIGHT :" ,weight ,'Kg' #weight
+    print "\t\t\t\t TYPE OF PACK :", pack#pack
+    print "\t\t\t\t LABEL MESSAGE :", label #label
+    print "\t\t\t\t NUMBER OF LABEL :", nlabel #nlabel
+    print "\t\t\t\t GST :", gst #gst
+    print "\t\t\t\t PRICE PACK :", pricepack
+    print "\t\t\t\t[TOTAL PRICE] :", "RM",price #price
+    print "\n____________________________________________________________________________"
+    print """
+                                              ^====^
+                 Thank you                \  {0 ~~ 0)  /
+                                           \  |----|  /
+         ^====^                             \|  ==  |/
+     \  {0 ~~ 0)  /     for choosing us
+      \  |----|  /
+       \|  ==  |/            ^====^
+                         \  {0 ~~ 0)  /
+                          \  |----|  /
+                           \|  ==  |/   As your best candy stoooore!
+    """
 
 
 #-----MANDATORY--------
@@ -69,8 +113,8 @@ time.sleep(0.5)
 while 1:
     yn = raw_input('do you want custom made label ? y/n [NO CAPS] ')
     if yn == 'y' or yn == 'Y':
-        nlabel = input('how many ?\n')
-        label = raw_input("what is it ?\n")
+        nlabel = input('how many ?')
+        label = raw_input("what is it ? ")
         pricepack = pricepack + (0.2 * nlabel)
         break
     elif yn == 'n' or yn == 'N':
@@ -81,18 +125,20 @@ while 1:
         print 'invalid'
 
 #-----MANDATORY-END------------------------------------------------------
+#--------------Customer.Information.loop--------------------------------
 while 1:
+    print "type help for help"
     func = raw_input("choose function ")
     
     if func == '0':
-        if name == '' and address == '' and cell == '':
-            print "pls"
+        if name == '' or address == '' or cell == '':
+            print "please Insert your shipping info"
             continue
         else:
             break
 
     elif func == 'help':
-        print sos
+        sos()
         
     elif func == '1':
         time.sleep(1)
@@ -137,7 +183,7 @@ while 1:
             
 #-----------PACKAGING------------------PACKAGING-------------------PACKAGING--        
 
-        print "Jar(100g) or Bag(50g)\n"
+        print "Jar(100g) or Bag(50g)"
         while 1:
             pack = raw_input("which type of packaging do you prefer [NO CAPS]\n")
             if pack == "jar" or pack == "Jar":
@@ -155,20 +201,20 @@ while 1:
                 nlabel = input('how many ?\n')
                 label = raw_input("what is it ?\n")
                 pricepack = pricepack + (0.2 * nlabel)
-                print "type sos for help"
                 break
             elif yn == 'n' or yn == 'N':
                 label = "N/A"
                 nlabel = "N/A"
-                print "type sos for help"
+                
                 break
             else:
                 print 'invalid'
+           
 
                    
 #----------------------------------CALCULATION----------------------------
 time.sleep(0.5)
-print "processing..."
+print "processing"
 time.sleep(1)
 
 if weight == 5:
@@ -192,44 +238,10 @@ price = price + gst
 
 #----------------------SUMMARY-----------------------------
 
-print """
-
-        _____.___.                     .__  __                  
-        \__  |   | ____  __ _________  |__|/  |_  ____   _____  
-         /   |   |/  _ \|  |  \_  __ \ |  \   __\/ __ \ /     \ 
-         \____   (  <_> )  |  /|  | \/ |  ||  | \  ___/|  Y Y  \
-"""
-print    "\t/ ______|\____/|____/ |__|    |__||__|  \___  >__|_|  /\n"
-      
-
-print "\t\t\t\t Menu"
-print "\t\t\t\t Name: ",name #name
-print "\t\t\t\t CELL-NUMBER :", cell #cell
-print "\t\t\t\t ADDRESS :", address #address
-print "\t\t\t\t CANDY FLAVOR :", flav #flav
-print "\t\t\t\t WEIGHT :" ,weight #weight
-print "\t\t\t\t TYPE OF PACK :", pack#pack
-print "\t\t\t\t TYPE OF LABEL :", label #label
-print "\t\t\t\t NUMBER OF LABEL :", label #nlabel
-print "\t\t\t\t GST :", gst #gst
-print "\t\t\t\t PRICE PACK :", pricepack
-print "\t\t\t\t[TOTAL PRICE] :", "RM",price #price
-print "\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+"
-print """
-                                          ^====^
-             Thank you                \  {0 ~~ 0)  /
-                                       \  |----|  /
-     ^====^                             \|  ==  |/
- \  {0 ~~ 0)  /     for choosing us
-  \  |----|  /
-   \|  ==  |/            ^====^
-                     \  {0 ~~ 0)  /
-                      \  |----|  /
-                       \|  ==  |/   As your best candy stoooore!
-""" 
-
+summary()
 
 #-----------------------TERMINATE-----------------
+
 
 while 1:
     out=raw_input('press 0 to exit the program ')
@@ -237,5 +249,6 @@ while 1:
         terminate()
     else:
         print ''
+
 
 
