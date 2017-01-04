@@ -1,9 +1,16 @@
 import sys, time
-sos = "1 : Billing Info \n2 : candy Flavor \n3 : Amount & Packaging \n0 : for summary \ntype sos for help"
+sos = "1 : Billing Info \n2 : candy Flavor \n3 : Amount & Packaging \n0 : for summary \ntype help for help"
 print "welcome to our program"
 
-#-----MANDATORY--------
 
+def terminate():
+    print "system will termminate in 3s"
+    time.sleep(3)
+    sys.exit(0)
+
+
+
+#-----MANDATORY--------
 time.sleep(1)
 name =raw_input("\nName\n")
 address = raw_input("Address\n")
@@ -185,25 +192,50 @@ price = price + gst
 
 #----------------------SUMMARY-----------------------------
 
-print name#name
-print cell#cell
-print address#address
-print flav#flav
-print weight#weight
-print pack#pack
-print label#label
-print nlabel#nlabel
-print gst#gst
-print pricepack
-print "RM", price#price
+print """
+
+        _____.___.                     .__  __                  
+        \__  |   | ____  __ _________  |__|/  |_  ____   _____  
+         /   |   |/  _ \|  |  \_  __ \ |  \   __\/ __ \ /     \ 
+         \____   (  <_> )  |  /|  | \/ |  ||  | \  ___/|  Y Y  \
+"""
+print    "\t/ ______|\____/|____/ |__|    |__||__|  \___  >__|_|  /\n"
+      
+
+print "\t\t\t\t Menu"
+print "\t\t\t\t Name: ",name #name
+print "\t\t\t\t CELL-NUMBER :", cell #cell
+print "\t\t\t\t ADDRESS :", address #address
+print "\t\t\t\t CANDY FLAVOR :", flav #flav
+print "\t\t\t\t WEIGHT :" ,weight #weight
+print "\t\t\t\t TYPE OF PACK :", pack#pack
+print "\t\t\t\t TYPE OF LABEL :", label #label
+print "\t\t\t\t NUMBER OF LABEL :", label #nlabel
+print "\t\t\t\t GST :", gst #gst
+print "\t\t\t\t PRICE PACK :", pricepack
+print "\t\t\t\t[TOTAL PRICE] :", "RM",price #price
+print "\n=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+"
+print """
+                                          ^====^
+             Thank you                \  {0 ~~ 0)  /
+                                       \  |----|  /
+     ^====^                             \|  ==  |/
+ \  {0 ~~ 0)  /     for choosing us
+  \  |----|  /
+   \|  ==  |/            ^====^
+                     \  {0 ~~ 0)  /
+                      \  |----|  /
+                       \|  ==  |/   As your best candy stoooore!
+""" 
 
 
 #-----------------------TERMINATE-----------------
-def main(out):
-    print "system will termminate in 3s"
-    time.sleep(3)
-    sys.exit("Thank you, for using our program.")
 
-
+while 1:
+    out=raw_input('press 0 to exit the program ')
+    if out == '0':
+        terminate()
+    else:
+        print ''
 
 
